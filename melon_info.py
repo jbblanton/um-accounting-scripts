@@ -1,18 +1,17 @@
-"""Print out all the melons in our inventory."""
+# """Print out all the melons in our inventory."""
 
+from melons import melon_data
 
-from melons import melon_names, melon_seedlessness, melon_prices
-
-
-def print_melon(name, seedless, price):
+def print_melon(melon_data):
     """Print each melon with corresponding attribute information."""
 
-    have_or_have_not = 'have'
-    if seedless:
-        have_or_have_not = 'do not have'
+for melon, data in melon_data.items():
+    print(melon)
+    for key in data:
+        print(key + ':', data[key])
 
-    print(f'{name}s {have_or_have_not} seeds and are ${price:.2f}')
+# #  Used this source for guidance: 
+# #      https://www.learnbyexample.org/python-nested-dictionary/
 
 
-for i in melon_names:
-    print_melon(melon_names[i], melon_seedlessness[i], melon_prices[i])
+
